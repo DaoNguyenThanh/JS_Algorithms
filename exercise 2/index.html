@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+</body>
+<!-- <script type="module" src="index.js"></script> -->
+<script> 
+    /* Đề bài: Nhập vào mảng gồm n số nguyên. Tìm số lớn nhất và gần lớn nhất trong mảng.*/
+    function main() {
+        const input = prompt("Nhập dãy số nguyên, ngăn cách bằng dấu cách", 0)
+        const numbers = input.split(' ').map(Number);
+        let max1 = numbers[0], max2;
+        for (let i = 0; i < numbers.length; i++) {
+            if (max1 < numbers[i]) {
+                max2 = max1;
+                max1 = numbers[i] 
+            }
+            else if (
+            (max2 === undefined || max2 < numbers[i])
+            && max1 > numbers[i]
+            ) {
+            max2 = numbers[i]
+            }
+        }
+        
+        
+        console.log({ max1, max2 });
+      }
+      main()
+//- if (min > numbers[i]) {
+        //- min = numbers[i]
+        //- }
+</script>
+</html>

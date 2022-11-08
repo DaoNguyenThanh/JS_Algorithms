@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+    h2 SUM(a, b)
+    p
+    | a: 
+    input#a(type='text')
+    p
+    | b: 
+    input#b(type='text')
+    
+    input(type='button' value='SUM' onclick='SUM()')
+    p
+    h1 Result = 
+      span#result 
+  
+    script.
+        function SUM() {
+            let a = document.getElementById("a").value;
+            let b = document.getElementById("b").value;
+            if (a == "" || b == ""){
+                alert("Vui lòng nhập vào hai số");
+                return false;
+            }else if (isNaN(a) || isNaN(b)){
+                alert("Bạn chỉ dc nhập số");
+                return false;
+            }else {
+                let sum = parseInt(a) + parseInt(b);
+                document.getElementById("result").innerHTML = sum;
+            }
+        }

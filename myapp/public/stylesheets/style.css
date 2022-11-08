@@ -1,0 +1,20 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+p {
+  text-align: justify;
+  font-size: 30px;
+}
+.title {
+  margin-bottom: 40px;
+}
+.exercise{
+  margin: 20px 0px;
+  text-align: justify;
+}

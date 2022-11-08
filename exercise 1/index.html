@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>SUM(a, b)</h2>
+    <p>a: <input type="text" id = "a"/></p>
+    <p>b: <input type="text" id = "b"/></p>
+    <!-- <input type="button" value = "SUM" onclick = "alert(SUM(Number(a.value), Number(b.value)))"/></p> -->
+    <input type="button" value = "SUM" onclick ="SUM()"/></p>
+    <h1><span id = "result"></span></h1>
+    
+</body>
+<!-- <script type="module" src="index.js"></script> -->
+<script> 
+    // function SUM(a,b) {
+    //    return (a + b);
+    // }
+
+    function SUM() {
+      //tong 2 so nguyen A va B
+      let a = document.getElementById("a").value;
+      let b = document.getElementById("b").value;
+        
+      if (a == "" || b == ""){
+        alert("Vui lòng nhập vào hai số");
+        return false;
+
+      }else if (isNaN(a) || isNaN(b)){ 
+        alert("Bạn chỉ dc nhập số");
+        return false;
+
+      }else {
+        let sum = parseInt(a) + parseInt(b);
+        document.getElementById("result").innerHTML = sum;
+      }
+    }
+</script>
+</html>

@@ -1,0 +1,43 @@
+extends ../layout
+
+block content
+    h2 Nhập vào mảng gồm n số nguyên. Tìm số lớn nhất và gần lớn nhất trong mảng
+    p
+    | Mời bạn nhập: 
+    input#array(type='text')
+    input(type='button' value='main' onclick='main()')
+    p
+    h1 Max = 
+      span#result 
+    p
+    h1 Be hon Max = 
+      span#result2 
+    
+    script.
+        /* Đề bài: Nhập vào mảng gồm n số nguyên. Tìm số lớn nhất và gần lớn nhất trong mảng.*/
+        function main() {
+            //const input = prompt("Nhập dãy số nguyên, ngăn cách bằng dấu cách", 0)
+            const inArray = document.getElementById("array").value;
+            const numbers = inArray.split(' ').map(Number);
+            let max1 = numbers[0], max2;
+            for (let i = 0; i < numbers.length; i++) {
+                if (max1 < numbers[i]) {
+                  max2 = max1;
+                  max1 = numbers[i]; 
+                }
+                else if (
+                  (max2 === undefined || max2 < numbers[i])
+                  && max1 > numbers[i]
+                ) {
+                  max2 = numbers[i];
+                }
+            }
+            //- if (min > numbers[i]) {
+            //- min = numbers[i]
+            //- }
+            
+            document.getElementById("result").innerHTML = max1;
+            document.getElementById("result2").innerHTML = max2;
+        }
+        //main()
+        //12 15 80 17 99 10
